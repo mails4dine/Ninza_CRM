@@ -1,0 +1,6 @@
+2026-01-04 06:55:23 [main] INFO  Demo - INFO log working
+2026-01-04 06:55:23 [main] WARN  Demo - WARN log working
+2026-01-04 06:55:23 [main] ERROR Demo - ERROR log working
+2026-01-04 07:02:19 [main] INFO  Utils - [TestNG] Running:
+  D:\WorkSpace\WorkSpace_Selenium\Ninza_CRM\testng.xml
+
