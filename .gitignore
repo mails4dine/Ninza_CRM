@@ -1,4 +1,5 @@
 target/
+ExtendReports/
 test-output/
 .settings/
 .project
