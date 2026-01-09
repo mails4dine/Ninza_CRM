@@ -1,6 +1,7 @@
 target/
 ExtendReports/
 test-output/
+temp-testng.xml
 .settings/
 .project
 .classpath
