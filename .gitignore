@@ -1,5 +1,5 @@
 target/
-ExtendReports/
+ExtentReports/
 test-output/
 temp-testng.xml
 .settings/
