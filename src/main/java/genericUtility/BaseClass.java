@@ -35,6 +35,7 @@ public class BaseClass {
     public JavaUtility jUtil = new JavaUtility();
     public LoginPage loginpage;
     public HomePage homepage;
+    public static WebDriver sdriver;
 
     @BeforeSuite
     public void configBS() {
@@ -61,7 +62,7 @@ public class BaseClass {
         } else {
             driver = new EdgeDriver();
         }
-        
+        sdriver=driver;
         driver.manage().window().maximize();
         wUtil.waitForPagetoLoad(driver);
         loginpage = new LoginPage(driver);

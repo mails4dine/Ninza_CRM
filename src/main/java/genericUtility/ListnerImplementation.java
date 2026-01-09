@@ -37,21 +37,24 @@ public class ListnerImplementation implements ITestListener, IConfigurationListe
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		String testName = result.getMethod().getMethodName();
-		
-		// Capture Exception
-		ExtentReportManager.test.get().log(Status.FAIL, testName + " -> Failed");
-		ExtentReportManager.test.get().log(Status.FAIL, result.getThrowable());
-		
-		// Optional: Attach Screenshot (Uncomment if BaseClass.sDriver is accessible)
-		/*
-		try {
-			String path = new WebDriverUtility().takeScreenShot(BaseClass.sDriver, testName);
-			ExtentReportManager.test.get().addScreenCaptureFromPath(path);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		*/
+	    String testName = result.getMethod().getMethodName();
+	    
+	    // 1. Log failure in Extent Report
+	    ExtentReportManager.test.get().log(Status.FAIL, testName + " -> Failed");
+	    ExtentReportManager.test.get().log(Status.FAIL, result.getThrowable());
+	    
+	    try {
+	        // 2. Use the correct method name: takeScreenshot (lowercase 's')
+	        // Ensure BaseClass.sDriver is assigned in your BaseClass @BeforeMethod
+	        String path = new WebDriverUtility().takeScreenshot(BaseClass.sdriver, testName);
+	        
+	        // 3. Attach to Extent Report
+	        ExtentReportManager.test.get().addScreenCaptureFromPath(path);
+	        
+	        Reporter.log("Screenshot captured for failed test: " + testName, true);
+	    } catch (Exception e) {
+	        Reporter.log("Failed to capture screenshot: " + e.getMessage(), true);
+	    }
 	}
 
 	@Override
