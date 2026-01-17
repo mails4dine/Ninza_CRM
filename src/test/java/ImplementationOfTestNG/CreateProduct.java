@@ -30,7 +30,7 @@ public class CreateProduct extends BaseClass {
         wUtil.waitForVisibilityofElement(driver, homepage.getProduct());
         homepage.getProduct().click();
         
-
+System.out.println();
         // --- STEP 3: PRODUCT DATA ENTRY ---
         ProductPage productPage = new ProductPage(driver);
         productPage.getAddProductBtn().click();
