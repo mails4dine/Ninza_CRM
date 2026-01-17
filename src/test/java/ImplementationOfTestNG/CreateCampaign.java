@@ -39,6 +39,7 @@ public class CreateCampaign extends BaseClass {
 
 		// 4. Validation & Toast Handling
 		String actualToastText = campaignpage.getToastTextAndClose();
+System.out.println(actualToastText);
 		
 		// Use .contains() for better stability as toast messages often have leading/trailing text
 		Assert.assertTrue(actualToastText.contains(campaignName), 
